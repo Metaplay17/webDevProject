@@ -1,0 +1,38 @@
+@import url(https://fonts.googleapis.com/css?family=Rosarivo:regular,italic);
+* {
+    margin: 0;
+    font-family: Rosarivo;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+}
+
+.status-block {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+}
+
+.status-block-image {
+    align-items: center;
+    width: 76px;
+    height: 76px;
+    border-radius: 60px;
+    background-color: #AC8F64;
+}
+
+.status-block img {
+    width: 48px;
+    padding: 20%;
+}
+
+#search-input {
+    width: 35vw;
+    padding: 5px;
+    border-radius: 10px;
+}
