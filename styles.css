@@ -4,31 +4,51 @@
     font-family: Rosarivo;
 }
 
+body {
+    display: flex;
+    flex-direction: row;
+}
+
 nav {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 30px;
+    justify-content: space-around;
 }
 
 .status-block {
     display: flex;
+    width: 30vw;
     flex-direction: row;
     align-items: center;
-    gap: 30px;
+    justify-content: space-between;
 }
 
 .status-block-image {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
     align-items: center;
-    width: 76px;
-    height: 76px;
+    width: 5vw;
+    height: 5vw;
     border-radius: 60px;
     background-color: #AC8F64;
 }
 
 .status-block img {
-    width: 48px;
-    padding: 20%;
+    width: 2vw;
+    height: 2vw;
+}
+
+.status-block-count {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 3vw;
+    height: 3vw;
+    background-color: #AC8F64;
+    border-radius: 50px;
 }
 
 #search-input {
