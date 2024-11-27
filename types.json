@@ -1,0 +1,29 @@
+[
+    {
+        "type": "Cappuccino"
+    },
+
+    {
+        "type": "Latte"
+    },
+
+    {
+        "type": "Americano"
+    },
+
+    {
+        "type": "Expresso"
+    },
+
+    {
+        "type": "Flat White"
+    },
+
+    {
+        "type": "Custom Coffee"
+    },
+
+    {
+        "type": "Super Custom Coffee"
+    }
+]
