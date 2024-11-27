@@ -1,0 +1,19 @@
+[
+    {
+        "name": "Cappuccino 1",
+        "price": "109 RUB",
+        "image": "images/cappuccino.png"
+    },
+
+    {
+        "name": "Cappuccino 2",
+        "price": "129 RUB",
+        "image": "images/cappuccino.png"
+    },
+
+    {
+        "name": "Cappuccino 3",
+        "price": "179 RUB",
+        "image": "images/cappuccino.png"
+    }
+]
