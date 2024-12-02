@@ -33,7 +33,7 @@
     <main>
         <nav>
             <input type="text" id="search-input" placeholder="Browse your favourite coffee here...">
-            <div class="status-block">
+            <div class="status-block" onclick="OpenRightMenu()">
                 <div class="status-block-image">
                     <img src="images/order.png">
                 </div>
@@ -47,6 +47,61 @@
             
         </div>
     </main>
+    <div class="right-menu">
+        <div class="right-heading">
+            <p>Order Status</p>
+            <div class="right-close-button" onclick="CloseRightMenu()">
+                <p>HIDE</p>
+                <img src="images/right-arrow.png">
+            </div>
+        </div>
+        <div class="right-category-list">
+            <div class="right-category">
+                <p>Ordered</p>
+                <div id="ordered-coffee-block" class="category-coffee-block">
+
+                </div>
+            </div>
+            <div class="category-coffee-block">
+                <p>Preparing</p>
+                <div id="preparing-coffee-block" class="category-coffee-list">
+                    
+                </div>
+            </div>
+            <div class="category-coffee-block">
+                <p>Finishing</p>
+                <div id="finishing-coffee-block" class="category-coffee-list">
+                    
+                </div>
+            </div>
+            <div class="category-coffee-block">
+                <p>Served</p>
+                <div id="served-coffee-block" class="category-coffee-list">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="order-menu">
+        <nav>
+            <div class="back-button-block" onclick="CloseOrderMenu()">
+                <img src="images/left-arrow.png">
+                <p>BACK TO MENU</p>
+            </div>
+            <div class="status-block">
+                <div class="status-block-image">
+                    <img src="images/order.png">
+                </div>
+                <p>Order status</p>
+                <div class="status-block-count">
+                    <p id="order-count">0</p>
+                </div>
+            </div>
+        </nav>
+        <div id="coffee-order-block">
+
+        </div>
+    </div>
 </body>
 <script src="code.js"></script>
 </html>

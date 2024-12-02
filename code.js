@@ -1,4 +1,10 @@
-const coffeeBlock = document.querySelector(".coffee-list")
+const coffeeBlock = document.querySelector(".coffee-list");
+const rightMenu = document.querySelector(".right-menu");
+const leftMenu = document.querySelector(".left-menu");
+const mainBlock = document.querySelector("main");
+const htmlBody = document.querySelector("body");
+const orderMenu = document.querySelector(".order-menu");
+const coffeeOrderBlock = getElementById("coffee-order-block");
 let coffeeSelectors = []
 
 for (let i = 1; i <= 5; i++) {
@@ -37,7 +43,7 @@ function Init() {
         s += `<div class="order-text-block">`
         s += `<p>${elem.price} RUB</p>`
         s += `</div>`
-        s += `<button class="order-button">+</button>`
+        s += `<button class="order-button" onclick="OpenOrderMenu(${elem.name})">+</button>`
         s += `</div>`
         s += `</div>`
     });
@@ -104,4 +110,43 @@ function ScrollUp() {
     }
     selectedBlock += 1;
     Update();
+}
+
+function OrderCoffee(coffeeName) {
+    currCoffee = 0;
+    coffee.forEach(elem => {
+        if (elem.name == coffeeName) {
+            currCoffee = elem;
+        }
+    });
+    coffeeOrderBlock.innerHTML = 
+    `
+    <h5>${currCoffee.name}</h5>
+    `
+}
+
+function OpenRightMenu() {
+    rightMenu.style.width = "25%";
+    rightMenu.style.display = "flex";
+    leftMenu.classList.add("deactivated")
+    mainBlock.classList.add("deactivated")
+    htmlBody.style.overflow = "hidden";
+}
+
+function CloseRightMenu() {
+    rightMenu.style.width = "0%";
+    rightMenu.style.display = "none";
+    leftMenu.classList.remove("deactivated")
+    mainBlock.classList.remove("deactivated")
+    htmlBody.style.overflow = "auto";
+}
+
+function OpenOrderMenu() {
+    orderMenu.style.display = "flex";
+    htmlBody.style.overflow = "hidden";
+}
+
+function CloseOrderMenu() {
+    orderMenu.style.display = "none";
+    htmlBody.style.overflow = "auto";
 }
