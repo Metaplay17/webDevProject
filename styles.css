@@ -13,10 +13,14 @@ body {
     flex-direction: row;
     background-color: #F6F6F6;
     gap: 20px;
-    padding: 3%;
+}
+
+h5 {
+    font-size: 32px;
 }
 
 nav {
+    margin-top: 3%;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -230,16 +234,17 @@ main {
 }
 
 .order-menu {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
     display: none;
     flex-direction: column;
-    gap: 20px;
+    gap: 50px;
     background-color: white;
-    padding-top: 3vw;
+    width: 100%;
+    background-color: #F4F4F4;
+}
+
+.coffee-order-data {
+    display: flex;
+    flex-direction: row;
 }
 
 .back-button-block {
@@ -251,6 +256,76 @@ main {
 
 #coffee-order-block {
     display: flex;
+    gap: 15px;
     flex-direction: column;
     align-items: flex-start;
+}
+
+.order-image {
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.order-image img {
+    width: 20vw;
+}
+
+.coffee-extras-sizes, .coffee-extras-extras, .coffee-extras-milks {
+    box-sizing: border-box;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: #b5aeaedc;
+    margin: 2px;
+}
+
+.coffee-extras-sizes:hover, .coffee-extras-extras:hover, .coffee-extras-milks:hover {
+    background-color: #AC8F64;
+    border: 1px solid black;
+    margin: 0
+}
+
+.extras-list {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.selected-coffee-extra {
+    background-color: #AC8F64;
+    border: 1px solid black;
+}
+
+.count-price {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 50px;
+}
+
+.count-price input {
+    border-radius: 10px;
+    border: none;
+    background-color: #FFFFFF;
+    padding: 5px;
+    font-size: 18px;
+    align-items: center;
+}
+
+.buy-block {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.buy-block button {
+    height: 50px;
+    width: 20vw;
+    border: none;
+    border-radius: 20px;
+    background-color: #CD4126CC;
+    color: white;
+
 }

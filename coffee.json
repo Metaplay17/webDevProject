@@ -3,146 +3,209 @@
         "name": "Cappuccino 1",
         "price": "109",
         "image": "images/cappuccino.png",
-        "type": "Cappuccino"
+        "type": "Cappuccino",
+        "sizes": ["SHORT", "TALL", "GRANDE", "VENTI"],
+        "extras": ["SUGAR", "MILK"],
+        "milks": ["OAT MILK", "SOY MILK", "ALMOND MILK"]
     },
 
     {
         "name": "Cappuccino 2",
         "price": "129",
         "image": "images/cappuccino.png",
-        "type": "Cappuccino"
+        "type": "Cappuccino",
+        "sizes": ["SHORT", "TALL", "GRANDE", "VENTI"],
+        "extras": ["SUGAR", "MILK"],
+        "milks": ["OAT MILK", "SOY MILK", "ALMOND MILK"]
     },
 
     {
         "name": "Cappuccino 3",
         "price": "179",
         "image": "images/cappuccino.png",
-        "type": "Cappuccino"
+        "type": "Cappuccino",
+        "sizes": ["SHORT", "TALL", "GRANDE", "VENTI"],
+        "extras": ["SUGAR", "MILK"],
+        "milks": ["OAT MILK", "SOY MILK", "ALMOND MILK"]
     },
 
     {
         "name": "Latte 1",
         "price": "109",
         "image": "images/latte.png",
-        "type": "Latte"
+        "type": "Latte",
+        "sizes": ["SHORT", "TALL", "GRANDE", "VENTI"],
+        "extras": ["SUGAR", "MILK"],
+        "milks": ["OAT MILK", "SOY MILK", "ALMOND MILK"]
     },
 
     {
         "name": "Latte 2",
         "price": "129",
         "image": "images/latte.png",
-        "type": "Latte"
+        "type": "Latte",
+        "sizes": ["SHORT", "TALL", "GRANDE", "VENTI"],
+        "extras": ["SUGAR", "MILK"],
+        "milks": ["OAT MILK", "SOY MILK", "ALMOND MILK"]
     },
 
     {
         "name": "Latte 3",
         "price": "179",
         "image": "images/latte.png",
-        "type": "Latte"
+        "type": "Latte",
+        "sizes": ["SHORT", "TALL", "GRANDE", "VENTI"],
+        "extras": ["SUGAR", "MILK"],
+        "milks": ["OAT MILK", "SOY MILK", "ALMOND MILK"]
     },
 
     {
         "name": "Americano 1",
         "price": "109",
         "image": "images/americano.png",
-        "type": "Americano"
+        "type": "Americano",
+        "sizes": ["SHORT", "TALL", "GRANDE", "VENTI"],
+        "extras": ["SUGAR", "MILK"],
+        "milks": ["OAT MILK", "SOY MILK", "ALMOND MILK"]
     },
 
     {
         "name": "Americano 2",
         "price": "129",
         "image": "images/americano.png",
-        "type": "Americano"
+        "type": "Americano",
+        "sizes": ["SHORT", "TALL", "GRANDE", "VENTI"],
+        "extras": ["SUGAR", "MILK"],
+        "milks": ["OAT MILK", "SOY MILK", "ALMOND MILK"]
     },
 
     {
         "name": "Americano 3",
         "price": "179",
         "image": "images/americano.png",
-        "type": "Americano"
+        "type": "Americano",
+        "sizes": ["SHORT", "TALL", "GRANDE", "VENTI"],
+        "extras": ["SUGAR", "MILK"],
+        "milks": ["OAT MILK", "SOY MILK", "ALMOND MILK"]
     },
 
     {
         "name": "Expresso 1",
         "price": "109",
         "image": "images/expresso.png",
-        "type": "Expresso"
+        "type": "Expresso",
+        "sizes": ["SHORT", "TALL", "GRANDE", "VENTI"],
+        "extras": ["SUGAR", "MILK"],
+        "milks": ["OAT MILK", "SOY MILK", "ALMOND MILK"]
     },
 
     {
         "name": "Expresso 2",
         "price": "129",
         "image": "images/expresso.png",
-        "type": "Expresso"
+        "type": "Expresso",
+        "sizes": ["SHORT", "TALL", "GRANDE", "VENTI"],
+        "extras": ["SUGAR", "MILK"],
+        "milks": ["OAT MILK", "SOY MILK", "ALMOND MILK"]
     },
 
     {
         "name": "Expresso 3",
         "price": "179",
         "image": "images/expresso.png",
-        "type": "Expresso"
+        "type": "Expresso",
+        "sizes": ["SHORT", "TALL", "GRANDE", "VENTI"],
+        "extras": ["SUGAR", "MILK"],
+        "milks": ["OAT MILK", "SOY MILK", "ALMOND MILK"]
     },
 
     {
         "name": "Flat White",
         "price": "109",
         "image": "images/flat-white.png",
-        "type": "Flat White"
+        "type": "Flat White",
+        "sizes": ["SHORT", "TALL", "GRANDE", "VENTI"],
+        "extras": ["SUGAR", "MILK"],
+        "milks": ["OAT MILK", "SOY MILK", "ALMOND MILK"]
     },
 
     {
         "name": "Flat White",
         "price": "129",
         "image": "images/flat-white.png",
-        "type": "Expresso"
+        "type": "Expresso",
+        "sizes": ["SHORT", "TALL", "GRANDE", "VENTI"],
+        "extras": ["SUGAR", "MILK"],
+        "milks": ["OAT MILK", "SOY MILK", "ALMOND MILK"]
     },
 
     {
         "name": "Flat White",
         "price": "179",
         "image": "images/flat-white.png",
-        "type": "Expresso"
+        "type": "Expresso",
+        "sizes": ["SHORT", "TALL", "GRANDE", "VENTI"],
+        "extras": ["SUGAR", "MILK"],
+        "milks": ["OAT MILK", "SOY MILK", "ALMOND MILK"]
     },
 
     {
         "name": "Custom Coffee",
         "price": "109",
         "image": "images/custom-coffee.png",
-        "type": "Custom Coffee"
+        "type": "Custom Coffee",
+        "sizes": ["SHORT", "TALL", "GRANDE", "VENTI"],
+        "extras": ["SUGAR", "MILK"],
+        "milks": ["OAT MILK", "SOY MILK", "ALMOND MILK"]
     },
 
     {
         "name": "Custom Coffee",
         "price": "129",
         "image": "images/custom-coffee.png",
-        "type": "Custom Coffee"
+        "type": "Custom Coffee",
+        "sizes": ["SHORT", "TALL", "GRANDE", "VENTI"],
+        "extras": ["SUGAR", "MILK"],
+        "milks": ["OAT MILK", "SOY MILK", "ALMOND MILK"]
     },
 
     {
         "name": "Custom Coffee",
         "price": "179",
         "image": "images/custom-coffee.png",
-        "type": "Custom Coffee"
+        "type": "Custom Coffee",
+        "sizes": ["SHORT", "TALL", "GRANDE", "VENTI"],
+        "extras": ["SUGAR", "MILK"],
+        "milks": ["OAT MILK", "SOY MILK", "ALMOND MILK"]
     },
 
     {
         "name": "Super Custom Coffee",
         "price": "109",
         "image": "images/super-custom-coffee.png",
-        "type": "Super Custom Coffee"
+        "type": "Super Custom Coffee",
+        "sizes": ["SHORT", "TALL", "GRANDE", "VENTI"],
+        "extras": ["SUGAR", "MILK"],
+        "milks": ["OAT MILK", "SOY MILK", "ALMOND MILK"]
     },
 
     {
         "name": "Super Custom Coffee",
         "price": "129",
         "image": "images/super-custom-coffee.png",
-        "type": "Super Custom Coffee"
+        "type": "Super Custom Coffee",
+        "sizes": ["SHORT", "TALL", "GRANDE", "VENTI"],
+        "extras": ["SUGAR", "MILK"],
+        "milks": ["OAT MILK", "SOY MILK", "ALMOND MILK"]
     },
 
     {
         "name": "Super Custom Coffee",
         "price": "179",
         "image": "images/super-custom-coffee.png",
-        "type": "Super Custom Coffee"
+        "type": "Super Custom Coffee",
+        "sizes": ["SHORT", "TALL", "GRANDE", "VENTI"],
+        "extras": ["SUGAR", "MILK"],
+        "milks": ["OAT MILK", "SOY MILK", "ALMOND MILK"]
     }
 ]
