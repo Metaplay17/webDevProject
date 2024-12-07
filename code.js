@@ -6,21 +6,29 @@ const htmlBody = document.querySelector("body");
 const orderMenu = document.querySelector(".order-menu");
 const coffeeOrderBlock = document.getElementById("coffee-order-block");
 const orderImageBlock = document.querySelector(".order-image");
-const orderedCoffeeBlock = getElementById("ordered-coffee-block");
-const prcesBlock = querySelector("prices-block");
+const orderedCoffeeBlock = document.getElementById("ordered-coffee-block");
+const pricesBlock = document.querySelector(".prices-block");
 let coffeeExtrasSizesButs = document.querySelector(".coffee-extras-sizes");
 let coffeeExtrasExtrasButs = document.querySelector(".coffee-extras-extras");
 let coffeeExtrasMilksButs = document.querySelector(".coffee-extras-milks");
 let coffeeSelectors = [];
+let orderedCoffeeList = [];
 
 for (let i = 1; i <= 5; i++) {
     coffeeSelectors.push(document.getElementById(`${i}-coffee-type`));
 }
 
+
+
 let coffee = [];
 let types = [];
 let selectedTypes = [0, 1, 2, 3, 4];
 let selectedBlock = -1;
+
+let totalPrice = 0;
+let totalCount = 0;
+
+let currFilter = "";
 
 function loadCoffeeSync() {
     const xhr = new XMLHttpRequest();
@@ -40,22 +48,26 @@ function loadCoffeeSync() {
         console.error('Ошибка загрузки types.json');
     }
 }
+loadCoffeeSync();
+LoadLocalStorage();
 
 function Init() {
-    loadCoffeeSync();
     let s = "";
     coffee.forEach(elem => {
-        s += `<div class="coffee-card" id="${elem.type}-block">`;
-        s += `<a name="${elem.type}"></a>`;
-        s += `<img src="${elem.image}">`;
-        s += `<p>${elem.name}</p>`;
-        s += `<div class="order-button-block">`;
-        s += `<div class="order-text-block">`;
-        s += `<p>${elem.price} RUB</p>`;
-        s += `</div>`;
-        s += `<button class="order-button" onclick="OrderCoffee('${elem.name}')">+</button>`;
-        s += `</div>`;
-        s += `</div>`;
+        if (currFilter == "" || elem.name.toLowerCase().includes(currFilter.toLowerCase())) {
+            s += `<div class="coffee-card" id="${elem.type}-block">`;
+            s += `<a name="${elem.type}"></a>`;
+            s += `<img src="${elem.image}">`;
+            s += `<p>${elem.name}</p>`;
+            s += `<div class="order-button-block">`;
+            s += `<div class="order-text-block">`;
+            s += `<p>${elem.price} RUB</p>`;
+            s += `</div>`;
+            s += `<button class="order-button" onclick="OrderCoffee('${elem.name}')">+</button>`;
+            s += `</div>`;
+            s += `</div>`;
+        }
+
     });
     coffeeBlock.innerHTML = s;
     Update();
@@ -119,13 +131,8 @@ function ScrollUp() {
 
 function OrderCoffee(coffeeName) {
     OpenOrderMenu();
-    let currCoffee = null;
+    let currCoffee = FindCoffee(coffeeName);
     let i = 0;
-    coffee.forEach(elem => {
-        if (elem.name == coffeeName) {
-            currCoffee = elem;
-        }
-    });
 
     let sizes = "<div class='extras-list'>";
     currCoffee.sizes.forEach(elem => {
@@ -181,9 +188,9 @@ function OrderCoffee(coffeeName) {
         <div class="buy-block">
         <div class="count-price">
         <p style="font-size: 22px; font-weight: 800;">${currCoffee.price} RUB</p>
-        <input type="number" min="1" max="10" value="1" id="order-count">
+        <input type="number" min="1" max="10" value="1" id="order-count-input">
         </div>
-        <button onclick="CreateOrder(${currCoffee.name})">PLACE ORDER</button>
+        <button onclick="CreateOrder('${currCoffee.name}', 0)">PLACE ORDER</button>
         </div>
         `;
     }
@@ -265,19 +272,77 @@ function ChooseCoffeeMilk(ind) {
     })
 }
 
-function CreateOrder(name) {
-    let coffee = FindCoffee(name);
-    let count = Number(document.getElementById("order-count").value);
-    let s = orderedCoffeeBlock.innerHTML;
+function CreateOrder(name, count_json) {
+    let selectedCoffee = FindCoffee(name);
+    console.log(name);
+    if (count_json == 0) {
+        count = Number(document.getElementById("order-count-input").value);
+    }
+    else {
+        count = count_json;
+    }
+    s = orderedCoffeeBlock.innerHTML;
     s += 
     `
-    <div class="ordered-coffee-block>
-    <img src="${coffee.image}">
-    <p>${coffee.name}</p>
+    <div class="ordered-coffee-block">
+    <div class="element-order-block">
+    <img src="${selectedCoffee.image}">
+    </div>
+    <div class="element-order-block">
+    <p>${selectedCoffee.name}</p>
+    </div>
     <div class="block-count">
     <p>${count}</p>
     </div>
     </div>
     `
+    orderedCoffeeBlock.innerHTML = s;
+    totalPrice += count * selectedCoffee.price;
+    totalCount += count;
+    document.getElementById("order-count").innerText = totalCount;
+    let p = "";
+    p += 
+    `
+    <div class="price-total-block">
+    <p>Subtotal</p>
+    <p>${totalPrice} RUB</p>
+    </div>
 
+    <div class="price-total-block">
+    <p>Discount -10%</p>
+    <p>${(totalPrice * 0.1).toFixed()} RUB</p>
+    </div>
+
+    <div class="price-total-block">
+    <p style="font-size: 22px">Total</p>
+    <p>${(totalPrice * 0.9).toFixed()} RUB</p>
+    </div>
+    <div class="slide-close-button" onclick="CloseRightMenu()">
+    <img src="images/right-slide.png">
+    </div>
+    `
+    pricesBlock.innerHTML = p;
+    if (count_json == 0) {
+        orderedCoffeeList.push({"name": name, "count": count});
+        UpdateLocalStorage();
+        CloseOrderMenu();
+    } 
+}
+
+document.getElementById("search-input").addEventListener('keydown', function(e) {
+    if (e.key == "Enter") {
+      currFilter = this.value;
+    }
+    Init();
+});
+
+function UpdateLocalStorage() {
+    localStorage.setItem("orderedCoffeeList", JSON.stringify(orderedCoffeeList));
+}
+
+function LoadLocalStorage() {
+    orderedCoffeeList = JSON.parse(localStorage.getItem("orderedCoffeeList"));
+    orderedCoffeeList.forEach(elem => {
+        CreateOrder(elem.name, elem.count);
+    })
 }
