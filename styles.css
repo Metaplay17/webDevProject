@@ -2,6 +2,7 @@
 * {
     margin: 0;
     font-family: Rosarivo;
+    font-size: 1.3vw;
 }
 
 html {
@@ -145,7 +146,7 @@ main {
     align-items: center;
     width: 100%;
     background-color: #AC8F64;
-    font-size: 20px;
+    font-size: 1.3vw;
     text-align: center;
     border-radius: 20px;
     padding: 20px 0;
@@ -173,7 +174,7 @@ main {
     justify-content: space-between;
     background-color: #FFFFFF;
     border-radius: 20px;
-    height: 35vh;
+    height: 30vh;
     padding: 5vh;
     margin: 3px;
 }
@@ -333,7 +334,7 @@ main {
     border: none;
     background-color: #FFFFFF;
     padding: 5px;
-    font-size: 18px;
+    font-size: 1.3vw;
     align-items: center;
 }
 
@@ -404,4 +405,169 @@ main {
     align-items: center;
     border-radius: 20px;
     background-color: #CD4126CC;
+}
+
+.slide-close-button img {
+    width: 1vw;
+}
+
+@media (max-width: 768px) {
+    * {
+        font-size: 2vw;
+    }
+    .left-menu {
+      display: none !important;
+    }
+
+    main {
+        margin-left: 10%;
+    }
+
+    .right-menu {
+        width: 60vw !important;
+        left: 30%;
+    }
+
+    .coffee-card {
+        height: 20vh;
+    }
+
+    .block-count {
+        width: 5vw;
+        height: 5vw;
+    }
+
+    .element-order-block {
+        width: 10vw;
+    }
+
+    .element-order-block img {
+        width: 10vw;
+    }
+
+    .order-image {
+        width: 30vw;
+    }
+
+    .order-image img {
+        width: 30vw;
+    }
+  }
+
+@media (max-width: 380px) {
+    * {
+        font-size: 3vw;
+    }
+    .coffee-list {
+        grid-template-columns: 80vw;
+    }
+
+    .coffee-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #FFFFFF;
+        border-radius: 20px;
+        height: 25vh;
+        padding: 5vh;
+        margin: 3px;
+    }
+
+    .coffee-card p {
+        font-size: 4vw;
+    }
+    
+    .coffee-card img {
+        height: 30vw;
+    }
+
+    .order-button-block {
+        width: 60%;
+        height: 20%;
+    }
+
+    .order-button-block button {
+        width: 30%;
+        height: 60%;
+        font-size: 4vw;
+    }
+
+    .order-image {
+        display: none;
+    }
+
+    #coffee-order-block {
+        margin-left: 10%;
+    }
+
+    .coffee-extras-sizes, .coffee-extras-extras, .coffee-extras-milks {
+        width: 17vw;
+        text-align: center;
+    }
+
+    .coffee-extras-sizes p, .coffee-extras-extras p, .coffee-extras-milks p {
+        font-size: 2.5vw;
+    }
+
+    .low-opacity-text {
+        font-size: 4vw;
+    }
+
+    .coffee-order-data button {
+        width: 80vw;
+        font-size: 5vw;
+    }
+
+    .count-price input {
+        width: 20vw;
+        font-size: 5vw;
+    }
+
+    .status-block {
+        font-size: 5vw;
+    }
+
+    .right-menu {
+        width: 100% !important;
+        left: 0;
+    }
+
+    .block-count {
+        width: 5vw;
+        height: 5vw;
+    }
+
+    .element-order-block img {
+        width: 20vw;
+    }
+
+    .slide-close-button {
+        width: 17vw;
+        height: 17vw;
+        border-radius: 40px;
+    }
+    .slide-close-button img {
+        width: 5vw;
+        height: 5vw;
+    }
+
+    .status-block {
+        width: 30vw;
+    }
+
+    .status-block-image {
+        width: 7vw;
+        height: 7vw;
+    }
+
+    .status-block-image img {
+        width: 3vw;
+        height: 3vw;
+    }
+
+    .status-block-count {
+        width: 7vw;
+        height: 7vw;
+    }
 }
