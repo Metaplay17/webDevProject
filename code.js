@@ -116,7 +116,7 @@ function ScrollDown() {
         return;
     }
     selectedTypes = selectedTypes.map(t => t + 1);
-    selectedBlock = Math.max(0, selectedBlock - 1);
+    selectedBlock -= 1; // Math.max(0, selectedBlock - 1);
     Update();
 }
 
@@ -125,7 +125,7 @@ function ScrollUp() {
         return;
     }
     selectedTypes = selectedTypes.map(t => t - 1);
-    selectedBlock = Math.min(4, selectedBlock + 1);
+    selectedBlock += 1; // Math.min(4, selectedBlock + 1);
     Update();
 }
 
@@ -274,7 +274,6 @@ function ChooseCoffeeMilk(ind) {
 
 function CreateOrder(name, count_json) {
     let selectedCoffee = FindCoffee(name);
-    console.log(name);
     if (count_json == 0) {
         count = Number(document.getElementById("order-count-input").value);
     }
@@ -299,7 +298,13 @@ function CreateOrder(name, count_json) {
     orderedCoffeeBlock.innerHTML = s;
     totalPrice += count * selectedCoffee.price;
     totalCount += count;
-    document.getElementById("order-count").innerText = totalCount;
+    let counts = document.querySelectorAll(".order-count");
+    console.log(counts);
+    counts.forEach(elem => {
+        console.log(elem);
+        elem.innerText = totalCount
+    })
+
     let p = "";
     p += 
     `
