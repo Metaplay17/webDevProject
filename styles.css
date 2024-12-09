@@ -60,7 +60,12 @@ main {
     width: 30vw;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
+    gap: 15px;
+}
+
+.status-block p {
+    text-align: end;
 }
 
 .status-block-image {
@@ -411,9 +416,9 @@ main {
     width: 1vw;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 1024px) and (max-width: 1440px) {
     * {
-        font-size: 2vw;
+        font-size: 3vw;
     }
     .left-menu {
       display: none !important;
@@ -423,13 +428,22 @@ main {
         margin-left: 10%;
     }
 
+    .coffee-list {
+        grid-template-columns: 40vw 40vw;
+    }
+
     .right-menu {
         width: 60vw !important;
         left: 30%;
     }
 
     .coffee-card {
-        height: 20vh;
+        height: 30vw;
+        width: 25vw;
+    }
+
+    .order-button-block {
+        width: 50%;
     }
 
     .block-count {
@@ -452,12 +466,30 @@ main {
     .order-image img {
         width: 30vw;
     }
+
+    #order-count-input {
+        width: 20vw;
+        font-size: 3vw
+    }
+
+    .buy-block button {
+        width: 100%;
+    }
   }
 
-@media (max-width: 380px) {
+@media (min-width: 320px) and (max-width: 1023px) {
     * {
         font-size: 3vw;
     }
+
+    .left-menu {
+        display: none !important;
+      }
+
+    main {
+        margin-left: 10%;
+    }
+
     .coffee-list {
         grid-template-columns: 80vw;
     }
@@ -469,8 +501,8 @@ main {
         justify-content: space-between;
         background-color: #FFFFFF;
         border-radius: 20px;
-        height: 25vh;
-        padding: 5vh;
+        height: 60vw;
+        padding: 5vw;
         margin: 3px;
     }
 
@@ -501,6 +533,10 @@ main {
         margin-left: 10%;
     }
 
+    #order-count-input {
+        font-size: 5vw;
+    }
+
     .coffee-extras-sizes, .coffee-extras-extras, .coffee-extras-milks {
         width: 17vw;
         text-align: center;
@@ -526,10 +562,12 @@ main {
 
     .status-block {
         font-size: 5vw;
+        justify-content: flex-end;
+        gap: 15px;
     }
 
     .right-menu {
-        width: 100% !important;
+        width: 90% !important;
         left: 0;
     }
 
@@ -554,6 +592,8 @@ main {
 
     .status-block {
         width: 30vw;
+        justify-content: flex-end;
+        gap: 15px;
     }
 
     .status-block-image {

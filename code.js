@@ -14,6 +14,11 @@ let coffeeExtrasMilksButs = document.querySelector(".coffee-extras-milks");
 let coffeeSelectors = [];
 let orderedCoffeeList = [];
 
+let selectedSize = "";
+let selectedExtra = "";
+let selectedMilk = "";
+
+
 for (let i = 1; i <= 5; i++) {
     coffeeSelectors.push(document.getElementById(`${i}-coffee-type`));
 }
@@ -187,7 +192,7 @@ function OrderCoffee(coffeeName) {
         ${milks}
         <div class="buy-block">
         <div class="count-price">
-        <p style="font-size: 22px; font-weight: 800;">${currCoffee.price} RUB</p>
+        <p style="font-size: 3vw; font-weight: 800;">${currCoffee.price} RUB</p>
         <input type="number" min="1" max="10" value="1" id="order-count-input">
         </div>
         <button onclick="CreateOrder('${currCoffee.name}', 0)">PLACE ORDER</button>
@@ -235,10 +240,11 @@ function ChooseCoffeeSize(ind) {
     coffeeExtrasSizesButs = document.querySelectorAll(".coffee-extras-sizes");
     coffeeExtrasSizesButs.forEach(elem => {
         if (i == ind) {
-            elem.classList.add("selected-coffee-extra")
+            elem.classList.add("selected-coffee-extra");
+            selectedSize = elem.innerText;
         }
         else {
-            elem.classList.remove("selected-coffee-extra")
+            elem.classList.remove("selected-coffee-extra");
         }
         i += 1;
     })
@@ -250,6 +256,7 @@ function ChooseCoffeeExtra(ind) {
     coffeeExtrasExtrasButs.forEach(elem => {
         if (i == ind) {
             elem.classList.add("selected-coffee-extra")
+            selectedExtra = elem.innerText;
         }
         else {
             elem.classList.remove("selected-coffee-extra")
@@ -264,6 +271,7 @@ function ChooseCoffeeMilk(ind) {
     coffeeExtrasMilksButs.forEach(elem => {
         if (i == ind) {
             elem.classList.add("selected-coffee-extra")
+            selectedMilk = elem.innerText;
         }
         else {
             elem.classList.remove("selected-coffee-extra")
@@ -274,6 +282,7 @@ function ChooseCoffeeMilk(ind) {
 
 function CreateOrder(name, count_json) {
     let selectedCoffee = FindCoffee(name);
+    let count = 0;
     if (count_json == 0) {
         count = Number(document.getElementById("order-count-input").value);
     }
@@ -328,7 +337,7 @@ function CreateOrder(name, count_json) {
     `
     pricesBlock.innerHTML = p;
     if (count_json == 0) {
-        orderedCoffeeList.push({"name": name, "count": count});
+        orderedCoffeeList.push({"name": name, "count": count, "size": selectedSize, "extra": selectedExtra, "milk": selectedMilk});
         UpdateLocalStorage();
         CloseOrderMenu();
     } 
