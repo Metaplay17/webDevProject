@@ -18,6 +18,10 @@ let selectedSize = "";
 let selectedExtra = "";
 let selectedMilk = "";
 
+if (localStorage.getItem('orderedCoffeeList') !== null) {
+    localStorage.setItem("orderedCoffeeList", JSON.stringify([])) 
+}
+
 
 for (let i = 1; i <= 5; i++) {
     coffeeSelectors.push(document.getElementById(`${i}-coffee-type`));
